@@ -15,3 +15,4 @@ This is the repo for the Object Oriented Programming  with java SE class from Pl
 
 
 ## Examples
+Encapsulation: when you protect/limits the access to the atributes of the class

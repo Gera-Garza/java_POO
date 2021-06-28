@@ -1,72 +1,31 @@
-public class Patient {
-    //atributes
-    static int id;
-    private String name;
-    private String email;
-    private String address;
-    private String phoneNumber;
+public class Patient extends User {
+    //Atributos
     private String birthday;
     private double weight;
     private double height;
     private String blood;
 
     Patient(String name, String email){
-        this.name = name;
-        this.email = email;
+        super(name,email);
     }
 
-    //setters
-    public void setWeight(double weight){
+    // 54.5
+    public void setWeight(double weight) {
         this.weight = weight;
     }
-    public void setHeight(double height){
-        this.height = height;
-    }
-    public void setName(String name){
-        this.name = name;
-    }
-    //geters
+
+    // 54.5 Kg. String
     public String getWeight(){
-        return this.weight + "kg";
+        return this.weight + " Kg.";
     }
 
-    public static int getId() {
-        return id;
+
+    public String getHeight() {
+        return height + " Mts.";
     }
 
-    public static void setId(int id) {
-        Patient.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        if (phoneNumber.length() > 8)
-            System.out.println("The number must be a maximum of 8 numbers");
-        else
-            this.phoneNumber = phoneNumber;
+    public void setHeight(double height) {
+        this.height = height;
     }
 
     public String getBirthday() {
@@ -75,10 +34,6 @@ public class Patient {
 
     public void setBirthday(String birthday) {
         this.birthday = birthday;
-    }
-
-    public String getHeight() {
-        return this.height + "mts";
     }
 
     public String getBlood() {
