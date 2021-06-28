@@ -29,6 +29,17 @@ public class Main {
         User userPa = new Patient("Karla","karla@karla.com");
         userPa.showDataUser();
 
+        User user1 = new User("Gerardo","gerardo@gerardo.com") {
+            @Override
+            public void showDataUser() {
+                System.out.println("\nDoctor " +getName());
+                System.out.println("Hospital: cruz verde");
+                System.out.println("Despartamento: Geriatria");
+            }
+        };
+
+        user1.showDataUser();
+
         System.out.println();
         System.out.println();
         System.out.println(patient);
