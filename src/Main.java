@@ -1,5 +1,3 @@
-import com.sun.org.apache.xml.internal.security.utils.DOMNamespaceContext;
-
 import java.util.Date;
 
 import static ui.UIMenu.*;
@@ -20,6 +18,9 @@ public class Main {
         for (Doctor.AvailableAppointment aA: myDoctor.getAvailableAppointments()) {
             System.out.println(aA.getDate() + " " + aA.getTime());
         }
+        System.out.println();
+        System.out.println();
+        System.out.println(patient);
 
 
     }//end of main
