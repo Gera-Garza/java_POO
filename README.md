@@ -25,19 +25,19 @@ Then in the extensions tab search for **Java Extension Pack** and install it.
 Start your proyect creating your files with **.java**  
 
 ## Summary
-In this course we see how to create a class, how to define and fill variables, the diferent loops like for loop or while loop, also some condicionals like **==** 
-or **>=**, **<=** and many others, and this is just a very general idea of how the course is.
+In this course talk about all what can be done and some benefits from using Object Oriented Programming, they mention what is a class, what is an object, and some core 
+ideas like Abstraction, Encapsulation, Inheritance and Polymorphism, I will explain a little bit of those now.
 
 ### Classes
-> **TIP**: For the program to recognice what to run is neccesary the **main** function
+> **Classes** A class is the model that you define to create objects it contains, an identifier, properties and methods.
 ```java
-public class holamundo {
+public class Main {
     public static void main(String[] args) {
-        System.out.println("hola mundo");
-    }
-}
+        showMenu();
+    }//end of main
+}//end of Main class
 ```
-### Variables
+### Abstraction
 So there is so many different kinds of variables and how to declare it so here are some examples:
 ```java
 public class Variables {
