@@ -11,7 +11,7 @@ This is the repository for the course of Java_POO with Platzi, here you will see
 > * [Encapsulation](#encapsulation)
 > * [Inheritance](#inheritance)
 > * [Polymorphism](#polymorphism)
-> * [Abstract Classes](#abstract clases)
+> * [Abstract_Class](#abstract_class)
 > * [Interfaces](#interfaces)	
 ## Technologies
 Project is created with:
@@ -60,61 +60,33 @@ public abstract class User {
 To encapsulate a class is when you protect your variables/properties and control how has access to them with the private/protect/public/default options
 > Also is important to know that you will need to create the getters and setters to acces those properties
  ```java
-public abstract class User {
-    private int id;
-    private String name;
-    private String email;
-    private String address;
-    private String phoneNumber;
+public class Doctor{
+    //Atributo
+    private String speciality;
+    private ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 
-    public User(String name, String email) {
-        this.name = name;
-        this.email = email;
+    public Doctor(String name, String email){
+        super(name,email);
     }
 
-    public int getId() {
-        return id;
+    public String getSpeciality() {
+        return speciality;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
     }
 
-    public String getName() {
-        return name;
+
+
+    public void addAvailableAppointment(String date, String time){
+        availableAppointments.add(new Doctor.AvailableAppointment(date,time));
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public ArrayList<AvailableAppointment> getAvailableAppointments(){
+        return availableAppointments;
     }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        if (phoneNumber.length() > 8){
-            System.out.println("El número telefónico debe ser de 8 dígitos máximo");
-        }else if(phoneNumber.length() == 8){
-            this.phoneNumber = phoneNumber;
-        }
-    }
+ }
 ```
 ### Inheritance
 Having inheritance it is very useful to write less code becuase you know that several classes used common properties or methods and there si when you used Inheritance
@@ -185,63 +157,62 @@ public class Doctor extends User {
 }
 ```
 
-### Abstract Class
-The condicionals are the boolean results of comparing some values or variables, here are some examples:
+### Abstract_Class
+The abstract class is for when you know that there will be no instances of that class you only used it to inherit properties or methdos
  ```java
-public class LogicOperations {
-    public static void main(String[] args) {
-        int a = 8;
-        int b = 5;
+public abstract class User {
+    private int id;
+    private String name;
+    private String email;
+    private String address;
+    private String phoneNumber;
 
-        //operadores de comparacion
-        System.out.println("a es igual a b? -> "+ (a==b));
-        System.out.println("a es diferente de b? -> "+ (a!=b));
+    public User(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
 
-        //operadores de relacion
-        System.out.println("a es mayor a b? -> "+ (a>b));
-        System.out.println("a es menor de b? -> "+ (a<b));
-        System.out.println("a es mayor o igual a b? -> "+ (a>=b));
-        System.out.println("a es menor o igual de b? -> "+ (a<=b));
+    public int getId() {
+        return id;
+    }
 
-        if(a == b){
-            System.out.println("a es igual a b? -> "+ (a==b));
-        }else if(a != b){
-            System.out.println("a es diferente de b? -> "+ (a!=b));
-        }else if(a > b){
-            System.out.println("a es mayor a b? -> "+ (a>b));
-        }else if(a < b){
-            System.out.println("a es menor de b? -> "+ (a<b));
-        }
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 }
 ```
 ### Interfaces
-The condicionals are the boolean results of comparing some values or variables, here are some examples:
+The interfaces are similar to abstract classes but they don't have the same limitations like only having only 1 "parent" and they could be implemented in any class, it is normally used to control other clases or add/share a common method between classes 
  ```java
-public class LogicOperations {
-    public static void main(String[] args) {
-        int a = 8;
-        int b = 5;
-
-        //operadores de comparacion
-        System.out.println("a es igual a b? -> "+ (a==b));
-        System.out.println("a es diferente de b? -> "+ (a!=b));
-
-        //operadores de relacion
-        System.out.println("a es mayor a b? -> "+ (a>b));
-        System.out.println("a es menor de b? -> "+ (a<b));
-        System.out.println("a es mayor o igual a b? -> "+ (a>=b));
-        System.out.println("a es menor o igual de b? -> "+ (a<=b));
-
-        if(a == b){
-            System.out.println("a es igual a b? -> "+ (a==b));
-        }else if(a != b){
-            System.out.println("a es diferente de b? -> "+ (a!=b));
-        }else if(a > b){
-            System.out.println("a es mayor a b? -> "+ (a>b));
-        }else if(a < b){
-            System.out.println("a es menor de b? -> "+ (a<b));
-        }
-    }
+public interface IScheduleable {
+    void schedule(Date date, String time);
 }
 ```
